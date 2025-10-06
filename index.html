@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NY Infrastructure Projects Map</title>
+
+
+<!-- MAPBOX LIBRARIES -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+<!-- Sidebar Description -->
+<div id="highlevel-findings">
+<p><strong>2025 New York State Climate Infrastructure Projects Nominations</strong></p>
+<p>Explore award-winning projects that are transforming communities across the state—by and for New Yorkers. Click a dot or search your address to learn what’s happening near you.</p>
+</div>
+
+
+<!-- NYSAPN Logo (Top Right) -->
+<div id="nysapn-logo-container">
+<img src="nysapn-logo.png" alt="NYSAPN Logo" id="nysapn-logo">
+</div>
+
+
+<!-- Geocoder Search -->
+<div id="geocoder"></div>
+
+
+<!-- Map Container -->
+<div id="map"></div>
+
+
+<!-- Legend -->
+<div id="legend">
+<div class="legend-title">Project Categories</div>
+<div class="legend-key" style="background:#bdbfff"></div><span>Large Community Infrastructure</span><br>
+<div class="legend-key" style="background:#a1d5d7"></div><span>Mid-Size Community Infrastructure</span><br>
+<div class="legend-key" style="background:#276a64"></div><span>Small Community Infrastructure</span><br>
+<div class="legend-key" style="background:#0059ff"></div><span>Climate Adaptation Program</span>
+</div>
+
+
+<!-- JS Script -->
+<script src="scripts.js"></script>
+</body>
+
+
+</html>

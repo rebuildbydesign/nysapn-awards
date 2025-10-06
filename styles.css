@@ -1,0 +1,196 @@
+/* styles.css */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#geocoder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    width: 300px;
+}
+
+#highlevel-findings {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 16px;
+    max-width: 360px;
+    border-left: 6px solid #000;
+    font-size: 0.88em;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+#legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.88em;
+    z-index: 10;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    width: 260px;
+}
+
+.legend-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.legend-key {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+#legend span {
+    font-size: 0.88em;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+.mapboxgl-popup {
+    font-family: 'Arial', sans-serif;
+    max-width: 320px;
+    z-index: 9999;
+}
+
+.mapboxgl-popup-content {
+    padding: 16px;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 380px !important;
+    /* Increased from 320px to 480px */
+    max-width: 380px !important;
+    /* Ensures larger image */
+}
+
+
+.mapboxgl-popup-close-button {
+    font-size: 20px;
+    color: #333;
+}
+
+.popup-thumbnail {
+    width: 100%;
+    max-height: 200px;
+    /* Increase this for taller thumbnails */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+.popup-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.popup-description {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.popup-category {
+    font-size: 1em;
+    margin-bottom: 6px;
+}
+
+.popup-cta a {
+    color: #0059ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.popup-cta a:hover {
+    text-decoration: underline;
+}
+
+#nysapn-logo-container {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 10000;
+}
+
+
+#nysapn-logo {
+    height: 150px;
+    width: auto;
+    opacity: 0.9;
+}
+
+
+@media (max-width: 700px) {
+    #nysapn-logo {
+        height: 100px;
+    }
+
+    #nysapn-logo-container {
+        top: 12px;
+        right: 14px;
+    }
+}
+
+@keyframes fadeInPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mapboxgl-popup-content {
+    animation: fadeInPop 0.35s ease-out;
+}
+
+
+@media (max-width: 600px) {
+
+    #highlevel-findings,
+    #legend {
+        font-size: 0.9em;
+        max-width: 50vw;
+    }
+
+    .mapboxgl-popup-content {
+        width: 60vw !important;
+        max-width: 60vw !important;
+        padding: 12px;
+    }
+
+    #view-projects-btn {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+}
