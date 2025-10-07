@@ -1,10 +1,13 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiajAwYnkiLCJhIjoiY2x1bHUzbXZnMGhuczJxcG83YXY4czJ3ayJ9.S5PZpU9VDwLMjoX_0x5FDQ'; // HOLDS THE CURRENTLY OPEN POPUP var currentPopup = null;
 
+//mapbox://styles/mapbox/light-v11
+//mapbox://styles/j00by/cm60z8amk005801qvfi826b4d
+
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v11',
-  center: [-75.0, 43.0], // Approx center of New York State
-  zoom: 6.3,
+  center: [-76.0, 43.0], // Approx center of New York State
+  zoom: 6.5,
   minZoom: 5.5
 });
 
@@ -38,7 +41,7 @@ map.on('load', () => {
         'match',
         ['get', 'Category'],
         'Large Community Infrastructure Project', '#bdbfff',
-        'Mid-Size Community Infrastructure Project', '#a1d5d7',
+        'Mid-Sized Community Infrastructure', '#a1d5d7',
         'Small Community Infrastructure Project', '#276a64',
         'Climate Adaptation Program', '#0059ff',
         '#ccc' // fallback color
@@ -48,6 +51,28 @@ map.on('load', () => {
       
     }
   });
+
+    // ADD NY STATE OUTLINE GEOJSON
+  map.addSource('nys-boundary', {
+    type: 'geojson',
+    data: 'nys.geojson' // Make sure this path is correct
+  });
+
+  map.addLayer({
+    id: 'nys-outline',
+    type: 'line',
+    source: 'nys-boundary',
+    layout: {
+      'line-join': 'round',
+      'line-cap': 'round'
+    },
+    paint: {
+      'line-color': '#fff000', // deep green (used for small projects)
+      'line-width': 2,
+      'line-opacity': 0.3
+    }
+  });
+
 
     // TOOLTIPS WITH NAME
 
